@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dunder Mifflin - Paper Portal</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/6/69/Dunder_Mifflin%2C_Inc.svg" type="image/svg+xml">
+  <link rel="icon" href="https://static.wikia.nocookie.net/theoffice/images/6/69/Dunder_Mifflin%2C_Inc.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('ywVkO4XBXod8Z6Bj'); </script>
   <script>
@@ -124,7 +124,7 @@
     </div>
 
     <div id="dwightBox" class="dwight-quote">
-      <p>"Before I do anything, I ask myself, 'Would an idiot do that?' And if the answer is yes, I do not do that thing."</p>
+      <p>"Before I do anything, I ask myself, /n 'Would an idiot do that?' /n And if the answer is yes, /n I do not do that thing."</p>
       <p>– Dwight Schrute, Assistant to the Regional Manager</p>
       <img src="https://upload.wikimedia.org/wikipedia/en/c/cd/Dwight_Schrute.jpg" alt="Dwight Schrute">
     </div>
@@ -140,9 +140,16 @@
       const formBox = document.getElementById('formBox');
       const dwightBox = document.getElementById('dwightBox');
       const contentBox = document.getElementById('contentBox');
+      const header = document.querySelector('header');
 
-      if (!formBox.contains(event.target) && !dwightBox.contains(event.target) && !event.target.closest('header')) {
-        dwightBox.style.display = 'block';
+      const isInsideBoxes = formBox.contains(event.target) || dwightBox.contains(event.target) || header.contains(event.target);
+
+      if (!isInsideBoxes) {
+        if (dwightBox.style.display === 'block') {
+          dwightBox.style.display = 'none';
+        } else {
+          dwightBox.style.display = 'block';
+        }
       }
     });
   </script>
