@@ -12,20 +12,20 @@
       font-family: 'Press Start 2P', cursive;
       background: #f4f1ea;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      display: block;
     }
 
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       background: #1b2a49;
       color: white;
-      width: 100%;
       padding: 20px;
       text-align: center;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
     }
 
     h1 {
@@ -35,13 +35,15 @@
     }
 
     .container {
-      margin-top: 40px;
+      margin-top: 140px;
       padding: 20px;
       background: #fff;
       border: 4px double #1b2a49;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       max-width: 600px;
       text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .toggle-button {
@@ -62,6 +64,20 @@
     .visible {
       display: block;
     }
+
+    .dwight-quote {
+      margin-top: 40px;
+      font-size: 10px;
+      color: #555;
+      border-top: 1px dashed #ccc;
+      padding-top: 15px;
+    }
+
+    .dwight-quote img {
+      width: 100px;
+      margin-top: 10px;
+      border: 3px solid #1b2a49;
+    }
   </style>
 </head>
 <body>
@@ -78,6 +94,12 @@
       <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/5VHAE7KvJf191VTzTdClph0u3D0i8YgqUGHCgy2fE4q0tuTS5xh2jOchH1w6VcnffJ">
         <script src="https://webforms.pipedrive.com/f/loader"></script>
       </div>
+    </div>
+
+    <div class="dwight-quote">
+      <p>"Before I do anything, I ask myself, 'Would an idiot do that?' And if the answer is yes, I do not do that thing."</p>
+      <p>– Dwight Schrute, Assistant to the Regional Manager</p>
+      <img src="https://upload.wikimedia.org/wikipedia/en/c/cd/Dwight_Schrute.jpg" alt="Dwight Schrute">
     </div>
   </div>
 
