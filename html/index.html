@@ -1,24 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-<script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('ywVkO4XBXod8Z6Bj'); </script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .pipedriveWebForms {
-            height: 800px
-            width: 800px
-        }
-    </style>
-    <link rel="stylesheet" href="css/style.css">
-    <script>window.pipedriveLeadboosterConfig = {base: 'leadbooster-chat.pipedrive.com',companyId: 10645018,playbookUuid: '206b0b9f-18ae-44e7-9a50-d3770af7db31',version: 2};(function () {var w = window;if (w.LeadBooster) {console.warn('LeadBooster already exists');} else {w.LeadBooster = {q: [],on: function (n, h) {this.q.push({ t: 'o', n: n, h: h });},trigger: function (n) {this.q.push({ t: 't', n: n });},};}})();</script><script src="https://leadbooster-chat.pipedrive.com/assets/loader.js" async></script>
-</head>    
-    
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dunder Mifflin - Paper Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('ywVkO4XBXod8Z6Bj'); </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: #f4f1ea;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #1b2a49;
+      color: white;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      margin-top: 40px;
+      padding: 20px;
+      background: #fff;
+      border: 4px double #1b2a49;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .toggle-button {
+      margin-top: 20px;
+      background: #1b2a49;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .form-container {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
 <body>
-    <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/5VHAE7KvJf191VTzTdClph0u3D0i8YgqUGHCgy2fE4q0tuTS5xh2jOchH1w6VcnffJ"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
+  <header>
+    <h1>Dunder Mifflin Paper Company</h1>
+    <p style="font-size: 12px;">Scranton Branch - Form HQ</p>
+  </header>
+
+  <div class="container">
+    <p>Welcome to the official paper request and chatbot testing portal.</p>
+    <button class="toggle-button" onclick="toggleForm()">📝 Access Form</button>
+
+    <div id="formBox" class="form-container">
+      <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/5VHAE7KvJf191VTzTdClph0u3D0i8YgqUGHCgy2fE4q0tuTS5xh2jOchH1w6VcnffJ">
+        <script src="https://webforms.pipedrive.com/f/loader"></script>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      const formBox = document.getElementById('formBox');
+      formBox.classList.toggle('visible');
+    }
+  </script>
 </body>
 </html>
