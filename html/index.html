@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dunder Mifflin - Paper Portal</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/6/69/Dunder_Mifflin%2C_Inc.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('ywVkO4XBXod8Z6Bj'); </script>
   <script>
@@ -104,17 +105,6 @@
       margin-top: 10px;
       border: 3px solid #1b2a49;
     }
-
-    .beet-button {
-      margin-top: 20px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .beet-button img {
-      width: 50px;
-    }
   </style>
 </head>
 <body>
@@ -123,7 +113,7 @@
     <p style="font-size: 12px;">Scranton Branch - Form HQ</p>
   </header>
 
-  <div class="container">
+  <div class="container" id="contentBox">
     <p>Welcome to the official paper request and chatbot testing portal.</p>
     <button class="toggle-button" onclick="toggleForm()">📝 Access Form</button>
 
@@ -132,10 +122,6 @@
         <script src="https://webforms.pipedrive.com/f/loader"></script>
       </div>
     </div>
-
-    <button class="beet-button" onclick="toggleDwight()">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Beetroot_on_white.jpg/240px-Beetroot_on_white.jpg" alt="Reveal Dwight">
-    </button>
 
     <div id="dwightBox" class="dwight-quote">
       <p>"Before I do anything, I ask myself, 'Would an idiot do that?' And if the answer is yes, I do not do that thing."</p>
@@ -150,10 +136,15 @@
       formBox.classList.toggle('visible');
     }
 
-    function toggleDwight() {
+    document.addEventListener('click', function(event) {
+      const formBox = document.getElementById('formBox');
       const dwightBox = document.getElementById('dwightBox');
-      dwightBox.style.display = dwightBox.style.display === 'block' ? 'none' : 'block';
-    }
+      const contentBox = document.getElementById('contentBox');
+
+      if (!formBox.contains(event.target) && !dwightBox.contains(event.target) && !event.target.closest('header')) {
+        dwightBox.style.display = 'block';
+      }
+    });
   </script>
 </body>
 </html>
