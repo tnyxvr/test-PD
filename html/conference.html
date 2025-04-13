@@ -46,11 +46,32 @@
       margin-right: auto;
     }
 
-    .conference-gif {
+    .quote-container {
       margin-top: 30px;
-      max-width: 100%;
-      border: 3px solid #1b2a49;
+      font-size: 18px;
+      color: #555;
+      padding: 20px;
+      border: 1px solid #1b2a49;
+      background: #f4f1ea;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .quote-container p {
+      margin: 0;
+    }
+
+    .quote-container button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #1b2a49;
+      color: white;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .quote-container button:hover {
+      background-color: #3b4b7a;
     }
 
     .back-button {
@@ -76,11 +97,37 @@
   </header>
 
   <div class="container">
-    <h2>Michael Scott Declares Bankruptcy</h2>
-    <img class="conference-gif" src="https://media.giphy.com/media/7mjODXhER3y3e/giphy.gif" alt="Michael Scott Declaring Bankruptcy">
-    
+    <h2>Michael Scott Quotes</h2>
+
+    <div class="quote-container" id="quoteBox">
+      <p id="quoteText">"I am Beyoncé, always."</p>
+      <button onclick="nextQuote()">Next Quote</button>
+    </div>
+
     <!-- Back Button -->
     <a href="index.html" class="back-button">Back to Dunder Mifflin Home</a>
   </div>
+
+  <script>
+    const quotes = [
+      "I am Beyoncé, always.",
+      "I'm not superstitious, but I am a little stitious.",
+      "I'm an early bird and a night owl. So I'm wise and I have worms.",
+      "I declare bankruptcy!",
+      "Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.",
+      "I'm not a hero. I am a silent guardian, a watchful protector. A Dark Knight.",
+      "I'm not a monster. I'm just ahead of the curve.",
+      "I am running away from my responsibilities, and it feels good.",
+      "Sometimes I'll start a sentence, and I don't even know where it's going. I just hope I find it along the way.",
+      "I'm an office manager. I'm the assistant regional manager. Assistant to the regional manager."
+    ];
+
+    let currentQuoteIndex = 0;
+
+    function nextQuote() {
+      currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+      document.getElementById('quoteText').innerText = quotes[currentQuoteIndex];
+    }
+  </script>
 </body>
 </html>
