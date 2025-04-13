@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dunder Mifflin - Conference Room</title>
+  <link rel="icon" href="https://static.wikia.nocookie.net/theoffice/images/6/69/Dunder_Mifflin%2C_Inc.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- Chatbot Script -->
+  <script>
+    window.pipedriveLeadboosterConfig = {
+      base: 'leadbooster-chat.pipedrive.com',
+      companyId: 10645018,
+      playbookUuid: '206b0b9f-18ae-44e7-9a50-d3770af7db31',
+      version: 2
+    };
+    (function () {
+      var w = window;
+      if (w.LeadBooster) {
+        console.warn('LeadBooster already exists');
+      } else {
+        w.LeadBooster = {
+          q: [],
+          on: function (n, h) {
+            this.q.push({ t: 'o', n: n, h: h });
+          },
+          trigger: function (n) {
+            this.q.push({ t: 't', n: n });
+          },
+        };
+      }
+    })();
+  </script>
+  <script src="https://leadbooster-chat.pipedrive.com/assets/loader.js" async></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #eaeaea;
+      font-family: 'Press Start 2P', cursive;
+      color: #222;
+      text-align: center;
+    }
+
+    header {
+      background-color: #0b2545;
+      color: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .whiteboard {
+      background: white;
+      border: 6px solid #888;
+      margin: 60px auto;
+      padding: 40px;
+      width: 80%;
+      max-width: 700px;
+      min-height: 300px;
+      position: relative;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    .quote {
+      font-size: 10px;
+      line-height: 1.7em;
+      color: #333;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #chili {
+      max-width: 100%;
+      margin-top: 30px;
+      border: 4px dashed #b71c1c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Conference Room, Five Minutes</h1>
+    <p style="font-size: 12px;">Mandatory Fun by Michael Scott</p>
+  </header>
+
+  <div class="whiteboard" id="whiteboard">
+    <div class="quote">
+      <p>\"Would I rather be feared or loved?</p>
+      <p>Easy. Both.</p>
+      <p>I want people to be afraid of how much they love me.\"</p>
+      <p>– Michael Scott</p>
+    </div>
+    <img id="chili" class="hidden" src="https://media.giphy.com/media/3o7qE1YN7aBOFPRw8E/giphy.gif" alt="Kevin's Chili" />
+  </div>
+
+  <script>
+    let clickCount = 0;
+    const whiteboard = document.getElementById('whiteboard');
+    const chili = document.getElementById('chili');
+
+    whiteboard.addEventListener('click', () => {
+      clickCount++;
+      if (clickCount === 3) {
+        chili.classList.remove('hidden');
+      } else if (clickCount > 3) {
+        chili.classList.add('hidden');
+        clickCount = 0;
+      }
+    });
+  </script>
+</body>
+</html>
