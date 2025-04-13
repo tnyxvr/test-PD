@@ -54,24 +54,15 @@
       border: 1px solid #1b2a49;
       background: #f4f1ea;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    .quote-container:hover {
+      background-color: #e0dbd3;
     }
 
     .quote-container p {
       margin: 0;
-    }
-
-    .quote-container button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #1b2a49;
-      color: white;
-      font-size: 14px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .quote-container button:hover {
-      background-color: #3b4b7a;
     }
 
     .back-button {
@@ -99,9 +90,8 @@
   <div class="container">
     <h2>Michael Scott Quotes</h2>
 
-    <div class="quote-container" id="quoteBox">
+    <div class="quote-container" id="quoteBox" onclick="nextQuote()">
       <p id="quoteText">"I am Beyoncé, always."</p>
-      <button onclick="nextQuote()">Next Quote</button>
     </div>
 
     <!-- Back Button -->
