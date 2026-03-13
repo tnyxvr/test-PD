@@ -63,14 +63,22 @@
 
     .quote-container p {
       margin: 0;
-      line-height: 1.6; /* Increased line spacing */
+      line-height: 1.6;
     }
 
-    .back-button {
+    .action-buttons {
       margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
       padding: 10px 20px;
       background-color: #1b2a49;
       color: white;
+      font-family: 'Press Start 2P', cursive;
       font-size: 14px;
       border: none;
       cursor: pointer;
@@ -78,8 +86,56 @@
       display: inline-block;
     }
 
-    .back-button:hover {
+    .btn:hover {
       background-color: #3b4b7a;
+    }
+
+    .btn-primary {
+      background-color: #d13a3a; /* A nice red accent for the CTA */
+    }
+
+    .btn-primary:hover {
+      background-color: #a32b2b;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 2000; /* Sit on top of the header */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    }
+
+    .modal-content {
+      background-color: #f4f1ea;
+      margin: 10% auto; /* 10% from the top and centered */
+      padding: 30px 20px;
+      border: 4px double #1b2a49;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .close-btn {
+      color: #1b2a49;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+      color: #d13a3a;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -95,8 +151,21 @@
       <p id="quoteText">"I am Beyoncé, always."</p>
     </div>
 
-    <!-- Back Button -->
-    <a href="index.html" class="back-button">Back to Dunder Mifflin Home</a>
+    <div class="action-buttons">
+      <a href="index.html" class="btn">Back to Dunder Mifflin Home</a>
+      <button onclick="openModal()" class="btn btn-primary">Click me</button>
+    </div>
+  </div>
+
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      
+      <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/c5erfAaIIsWI4P8m1CejiP00xYrJS34UafYOz6EPgGg0lFpPUAmlQmlqX0iY3b2OXx">
+        <script src="https://webforms.pipedrive.com/f/loader"></script>
+      </div>
+
+    </div>
   </div>
 
   <script>
@@ -118,6 +187,24 @@
     function nextQuote() {
       currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
       document.getElementById('quoteText').innerText = quotes[currentQuoteIndex];
+    }
+
+    // Modal Logic
+    const modal = document.getElementById("formModal");
+
+    function openModal() {
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    // Close modal if the user clicks anywhere outside of the modal content
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
   </script>
 </body>
